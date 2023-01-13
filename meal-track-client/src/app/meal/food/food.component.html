@@ -1,0 +1,15 @@
+<div class="container-fluid">
+    <h1 class="display-4 title">Food</h1>
+    <hr class="solid">
+    <div class="container">
+        <ul *ngFor="let food of foods$ | async">
+            <app-food-item class="item" [food]="food"></app-food-item>
+        </ul>
+    </div>
+    <div *ngIf="(foods$ | async).length == 0">
+        <h3 class="display-4 list-group-item d-flex justify-content-center align-items-center"
+            style="color: gray; font-size: 30px;">
+            No food found
+        </h3>
+    </div>
+</div>

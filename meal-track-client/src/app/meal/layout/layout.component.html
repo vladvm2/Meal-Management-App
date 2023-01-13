@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+</head>
+
+<body>
+    <div class="d-flex" id="wrapper">
+        <div class="border-right" id="sidebar-wrapper">
+            <div class="logo">
+                <div class="h2 logo-title">MealTrack</div>
+                <h6 class="logo-motto">nutrients on the way</h6>
+            </div>
+            <div id="user-photo-fullName" class="mb-5 mt-2 d-flex justify-content-center">
+                <img [src]='currentUser.image' style="width: 70px; height: 70px;border: 2px solid black !important;" class="rounded-circle border img-fluid">
+                <div id="salutation">
+                    <p id="welcome">Welcome</p>
+                    <p id="userName">{{ currentUser.fullName }}</p>
+                </div>
+            </div>
+
+
+            <div class="list-group list-group-flush">
+                <a *ngFor="let navButton of navButtons" (click)="selectPage(navButton)" routerLink="{{ navButton.url }}"
+                    [ngClass]="(selectedButton == navButton) ? 'list-group-item list-group-item-action nav-btn disabled' : 'list-group-item list-group-item-action nav-btn' ">{{navButton.name}}</a>
+            </div>
+        </div>
+
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

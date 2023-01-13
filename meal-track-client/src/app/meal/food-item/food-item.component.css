@@ -1,0 +1,23 @@
+.food-details{
+    background-color: whitesmoke;
+}
+
+.card-text{
+    margin:0;
+}
+
+.badge{
+    margin-right: 30px;
+}
+
+.nutrients-details{
+    width: 70%;
+}
+
+.nutrient-detail{
+    float: right;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    width: 70px;
+}
+

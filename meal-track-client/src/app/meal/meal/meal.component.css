@@ -1,0 +1,16 @@
+#calories{
+    margin-top: 10px;
+    width: 70px;
+    font-size: 13px;
+}
+
+
+.btn-delete{
+    line-height: 50%;
+    visibility: hidden;
+}
+
+#foodPortion-row:hover .btn-delete{
+    visibility: visible;
+}
+

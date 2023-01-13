@@ -1,0 +1,118 @@
+body {
+  overflow-x: hidden;
+}
+
+.disabled{
+  border-right: 3px solid teal;
+}
+
+.nav-btn{
+  background-color: transparent;
+}
+
+.nav-btn:hover{
+  background-color: #e0e0e0;
+}
+
+.logo{
+  text-align: center;
+  margin-bottom: 10px;
+  padding-top:10px;
+  padding-bottom: 5px;
+}
+.logo-title{
+  line-height: 70%;
+ padding:0;
+ margin:0;
+}
+
+.logo-motto{
+  padding:0;
+  margin:0;
+  font-size: 14px;
+  font-weight:bold;
+  font-style: italic;
+}
+
+#sidebar-wrapper {
+  background-color: #eeeeee;
+  min-height: 100vh;
+  margin-left: -15rem;
+  -webkit-transition: margin .25s ease-out;
+  -moz-transition: margin .25s ease-out;
+  -o-transition: margin .25s ease-out;
+  transition: margin .25s ease-out;
+}
+
+#sidebar-wrapper .sidebar-heading {
+  padding: 0.875rem 1.25rem;
+  font-size: 1.2rem;
+}
+
+#sidebar-wrapper .card-user{
+  width: 12rem;
+  margin:0 auto;
+  margin-bottom: 20px;
+}
+
+#sidebar-wrapper .card-img-top{
+  background-color: gray;
+  height: 100px;
+}
+
+.card-body{
+  text-align: center;
+  padding-bottom: 3px;
+  padding-top:3px;
+}
+
+#sidebar-wrapper .list-group {
+  width: 15rem;
+}
+
+#page-content-wrapper {
+  min-width: 100vw;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  margin-left: 0;
+}
+
+#user-photo-fullName{
+text-align: center;
+}
+
+@media (min-width: 768px) {
+  #sidebar-wrapper {
+    margin-left: 0;
+  }
+
+  #page-content-wrapper {
+    min-width: 0;
+    width: 100%;
+  }
+
+  #wrapper.toggled #sidebar-wrapper {
+    margin-left: -15rem;
+  }
+}
+
+#salutation{
+  margin-left: 5px;
+  margin-top:15px;
+}
+
+#welcome{
+text-align: left;
+padding: 0;
+margin:0;
+}
+
+#userName{
+line-height: 50%;
+text-align: left;
+font-weight: bold;
+font-size: 15px;
+padding: 0;
+margin:0;
+}

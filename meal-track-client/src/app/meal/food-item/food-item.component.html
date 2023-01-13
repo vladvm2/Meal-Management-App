@@ -1,0 +1,22 @@
+<div class="card mb-3" style="max-width:500px;max-height:200px;">
+    <div class="row no-gutters">
+        <img [src]='food.image' class="col-md-5" style="max-height: 200px;">
+
+        <div class="col-md-7 food-details">
+            <div class="card-body">
+                <h5 class="card-title">{{ food.title }}</h5>
+                <p class="card-text nutrients-title"><strong>Nutrients per 100 g:</strong></p>
+                <div class="col-md5 nutrients-details">
+                    <p class="card-text">Protein <span
+                            class="badge nutrient-detail badge-success">{{ food.protein + ' g' }}</span></p>
+                    <p class="card-text">Fats <span
+                            class="badge nutrient-detail badge-success">{{ food.fats + ' g' }}</span></p>
+                    <p class="card-text">Carbs <span
+                            class="badge nutrient-detail badge-success">{{ food.carbs + ' g' }}</span></p>
+                    <p class="card-text">Calories &nbsp;<span
+                            class="badge nutrient-detail badge-danger">{{ food.calories + ' kcal' }}</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

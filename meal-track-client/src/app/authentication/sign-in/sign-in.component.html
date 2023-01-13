@@ -1,0 +1,24 @@
+<form [formGroup]="signInForm" (ngSubmit)="signIn()" class="form">
+    <div class="form-item">
+        <input type="text" autofocus placeholder="Email" formControlName="email"
+            [ngClass]="(submitted && f.email.errors) ? 'form__input error':'form__input' ">
+        <div>
+            <div *ngIf="submitted && f.email.errors" class="form__alert">
+                <div *ngIf="f.email.errors.required">Email is required.</div>
+                <div *ngIf="f.email.errors.email">Please enter valid email address.</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-item">
+        <input type="password" autofocus placeholder="Password" formControlName="password"
+            [ngClass]="(submitted && f.password.errors) ? 'form__input error':'form__input' ">
+        <div>
+            <div *ngIf="submitted && f.password.errors" class="form__alert">
+                <div *ngIf="f.password.errors.required">Password is required.</div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="errorMessage" [ngClass]="{'form__result failure': errorMessage}">{{ errorMessage }}.</div>
+    <input type="submit" value="Sign in" class="form__button">
+</form>

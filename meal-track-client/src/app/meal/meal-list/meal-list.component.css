@@ -1,0 +1,58 @@
+.solid{
+    margin-top: 8px;
+    background-color: gray;
+}
+
+#header-container{
+    padding:0;
+    margin-bottom: 0;
+}
+
+#title{
+    font-size: 30px;
+    padding-top:10px;
+}
+
+#calories{
+    width: 70px;
+    font-size: 13px;
+}
+
+#btn-create{
+    background-color: teal;
+}
+
+.btn-delete{
+    line-height: 50%;
+}
+
+.btn-edit{
+    line-height: 50%;
+    background-color: teal;
+    margin-right: 20px;
+}
+
+.edit-delete{
+    visibility: hidden;
+}
+
+
+.meal-item:hover{
+    background-color: whitesmoke;
+}
+
+.meal-item:hover .edit-delete{
+    visibility: visible;
+}
+
+#meal-title{
+    padding-left: 20px;
+}
+
+#list-header{
+    width: 50%;
+}
+
+.column-meal{
+    width: 30%;
+}

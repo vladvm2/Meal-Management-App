@@ -1,0 +1,25 @@
+<aside class="auth__side auth__presentation">
+    <div class="auth__home">
+        <div class="brand">
+            <h1 class="brand__item brand__item-name">Meal Track</h1>
+            <h3 class="brand__item brand__item-motto">nutrients on the way</h3>
+        </div>
+    </div>
+</aside>
+<main class="auth__side auth__container">
+    <div class="auth__form">
+        <nav class="form__navbar">
+            <div class="navbar__button navbar__button--pressed" (click)="click()"
+                [class.navbar__button--pressed]="isOpened">
+                <a routerLink="/auth/sign-in">Sign in</a>
+            </div>
+            <div class="navbar__button  navbar__button--pressed" (click)="click()"
+                [class.navbar__button--pressed]="!isOpened">
+                <a routerLink="/auth/sign-up">Sign up</a>
+            </div>
+        </nav>
+        <div class="form__content">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</main>

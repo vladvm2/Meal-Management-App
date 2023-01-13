@@ -1,0 +1,85 @@
+<div class="container-fluid">
+    <h1 class="display-4" style="font-size: 30px;padding-top: 10px;">Profile</h1>
+    <hr class="solid" style="background-color:gray;">
+    <div class="container p-0 align-content-start ml-0" id="container-form">
+        <div *ngIf="(updatedMessage$ | async) as message" class="alert alert-success" role="alert">
+            {{ message }}
+        </div>
+        <div class="d-flex flex-column col-form-label">
+            <div class="col-form-label">
+                <div class="hovereffect" (click)="fileInput.click()">
+                    <img class="img-responsive" [src]="previewImage" style="width:200px;height: 200px;" alt="">
+                    <div class="overlay">
+                        <h2>Change</h2>
+                        <input #fileInput type="file" (change)="onImageChanged($event)" style="display: none;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <form [formGroup]="profileForm" class="mt-4" (ngSubmit)="onSubmit()">
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Full name</label>
+                <div class="col-sm-10">
+                    <input type="text"
+                        [ngClass]="pForm.fullName.errors ? 'form-control input is-invalid':'form-control input'"
+                        formControlName="fullName">
+                    <div *ngIf="pForm.fullName.errors" class="invalid-feedback">
+                        Full name is required
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-10">
+                    <input type="email"
+                        [ngClass]="pForm.email.errors ? 'form-control input is-invalid':'form-control input'"
+                        formControlName="email">
+                    <div *ngIf="pForm.email.errors" class="invalid-feedback">
+                        <div *ngIf="pForm.email.errors.required">Email is required.</div>
+                        <div *ngIf="pForm.email.errors.email">Please enter valid email address.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Change password</label>
+                <div class="col-sm-10">
+                    <label class="switch">
+                        <input type="checkbox" data-toggle="collapse" href="#collapsePasswordArea" role="button"
+                            aria-expanded="false" aria-controls="collapsePasswordArea" (click)="onChangePassword()">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="form-group collapse" id="collapsePasswordArea">
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Password</label>
+                    <div class="col-sm-10">
+                        <input type="password"
+                            [ngClass]="pForm.password.errors ? 'form-control input is-invalid':'form-control input'"
+                            formControlName="password">
+                        <div *ngIf="changePassword && pForm.password.errors" class="invalid-feedback">
+                            <div *ngIf="pForm.password.errors.required">Password is required.</div>
+                            <div *ngIf="pForm.password.errors.minlength">Password must be at least 6 characters.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Confirm password</label>
+                    <div class="col-sm-10">
+                        <input type="password"
+                            [ngClass]="pForm.confirmPassword.errors ? 'form-control input is-invalid':'form-control input'"
+                            formControlName="confirmPassword">
+                        <div *ngIf="changePassword && pForm.confirmPassword.errors" class="invalid-feedback">
+                            <div *ngIf="pForm.confirmPassword.errors.required">Password is required.</div>
+                            <div *ngIf="pForm.confirmPassword.errors.mustMatch">Passwords must match.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row pt-4">
+                <button type="submit" class="ml-3 btn btn-primary"
+                    style="width: 100px; background-color: teal;">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>

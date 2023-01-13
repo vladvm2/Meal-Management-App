@@ -1,0 +1,20 @@
+<div class="container-fluid">
+    <h1 class="display-4" style="font-size: 30px;padding-top: 10px;">Dashboard</h1>
+    <hr class="solid" style="background-color:gray;">
+    <div class="card container p-0">
+        <div class="card-header pt-1 pb-1">
+            <div class="font-weight-light">Meal average nutrients intake</div>
+        </div>
+        <div class="card-body">
+            <div style="display: block;" *ngIf="(chartSettings$ | async)">
+                <canvas mdbChart [chartType]="chart.type"
+                                 [datasets]="chart.dataSets"
+                                 [labels]="chart.labels"
+                                 [colors]="chart.colors"
+                                 [options]="chart.options"
+                                 (chartHover)="chart.hovered($event)">
+                </canvas>
+            </div>
+        </div>
+    </div>
+</div>
